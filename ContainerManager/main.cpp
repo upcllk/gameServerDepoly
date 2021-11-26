@@ -55,7 +55,7 @@ int main()
     // 登陆服务器 IP
     redisAsyncContext* pc = redisAsyncConnect("192.168.153.131", 6379);
     redisLibeventAttach(pc, base);
-
+     
     redisAsyncCommand(pc, my_callback, NULL, "subscribe create_room");
 
     event_base_dispatch(base);
